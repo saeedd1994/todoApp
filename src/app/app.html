@@ -3,20 +3,19 @@
 <div class="main">
   <ul id="users">
     <li>
-      <app-user (select)="selectedUser($event)" [id]="user[0].id" [avatar]="user[0].avatar"
-                [name]="user[0].name"></app-user>
+      <app-user (select)="selectedUser($event)" [user]="user[0]"></app-user>
     </li>
     <li>
-      <app-user (select)="selectedUser($event)" [id]="user[1].id" [avatar]="user[1].avatar"
-                [name]="user[1].name"></app-user>
+      <app-user (select)="selectedUser($event)" [user]="user[1]"></app-user>
     </li>
     <li>
-      <app-user (select)="selectedUser($event)" [id]="user[2].id" [avatar]="user[2].avatar"
-                [name]="user[2].name"></app-user>
+      <app-user (select)="selectedUser($event)" [user]="user[2]"></app-user>
     </li>
     <li>
-      <app-user (select)="selectedUser($event)" [id]="user[3].id" [avatar]="user[3].avatar"
-                [name]="user[3].name"></app-user>
+      <app-user (select)="selectedUser($event)" [user]="user[3]"></app-user>
     </li>
   </ul>
+
+  <app-tasks [name]="selectedName?.name"></app-tasks>
+
 </div>

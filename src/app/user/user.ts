@@ -8,17 +8,20 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class User {
 
-  @Input() avatar!: string;
-  @Input() name!: string;
-  @Input({required: true}) id !: string;
-  @Output() select = new EventEmitter();
+
+  @Input() user !: {
+    id: string;
+    name: string;
+    avatar: string;
+  };
+  @Output() select = new EventEmitter<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
 
   onBtnClicked() {
-    this.select.emit(this.id)
+    this.select.emit(this.user.id)
   }
 }
