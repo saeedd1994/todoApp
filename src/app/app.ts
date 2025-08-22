@@ -11,11 +11,11 @@ import {Tasks} from './tasks/tasks';
   styleUrl: './app.scss'
 })
 export class App {
-  user = DUMMY_USERS
+  users = DUMMY_USERS
   selectedId: string = '';
 
   get selectedName() {
-    return this.user.find((user) => user.id === this.selectedId);
+    return this.users.find((user) => user.id === this.selectedId);
   }
 
   selectedUser(id: string) {

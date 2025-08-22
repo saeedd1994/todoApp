@@ -2,18 +2,11 @@
 
 <div class="main">
   <ul id="users">
-    <li>
-      <app-user (select)="selectedUser($event)" [user]="user[0]"></app-user>
-    </li>
-    <li>
-      <app-user (select)="selectedUser($event)" [user]="user[1]"></app-user>
-    </li>
-    <li>
-      <app-user (select)="selectedUser($event)" [user]="user[2]"></app-user>
-    </li>
-    <li>
-      <app-user (select)="selectedUser($event)" [user]="user[3]"></app-user>
-    </li>
+    @for (user of users; track user.id) {
+      <li>
+        <app-user (select)="selectedUser($event)" [user]="user"></app-user>
+      </li>
+    }
   </ul>
 
   <app-tasks [name]="selectedName?.name"></app-tasks>
