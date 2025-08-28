@@ -7,6 +7,7 @@ import {Task} from '../task/task';
     Task
   ],
   templateUrl: './tasks.html',
+  standalone: true,
   styleUrl: './tasks.scss'
 })
 export class Tasks {
