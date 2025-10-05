@@ -51,7 +51,11 @@ export class Tasks {
     this.tasks = this.tasks.filter((task)=> task.id !== id)
   }
 
-  addNewTask() {
+   addNewTask() {
     this.isAddNewTask = true;
+  }
+
+  onCancelAddTask() {
+    this.isAddNewTask = false;
   }
 }

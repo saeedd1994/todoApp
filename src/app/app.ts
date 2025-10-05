@@ -8,6 +8,7 @@ import {Tasks} from './tasks/tasks';
   selector: 'app-root',
   imports: [Header, User, Tasks],
   templateUrl: './app.html',
+  standalone: true,
   styleUrl: './app.scss'
 })
 export class App {

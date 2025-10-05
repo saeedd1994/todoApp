@@ -5,6 +5,7 @@ import {type IUser} from './user.model';
   selector: 'app-user',
   imports: [],
   templateUrl: './user.html',
+  standalone: true,
   styleUrl: './user.scss'
 })
 export class User {
