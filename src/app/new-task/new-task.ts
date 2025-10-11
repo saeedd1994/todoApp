@@ -1,8 +1,11 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-new-task',
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './new-task.html',
   standalone: true,
   styleUrl: './new-task.scss'
@@ -10,8 +13,14 @@ import {Component, EventEmitter, Output} from '@angular/core';
 export class NewTask {
 
   @Output() cancel = new EventEmitter<void>();
+  enteredTitle = '';
+  enteredSummary = '';
+  enteredData = '';
 
   cancelTask() {
-    this.cancel.emit();
+    this.cancel.emit();  }
+
+  onSubmit() {
+
   }
 }
