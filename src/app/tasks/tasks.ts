@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Task} from '../task/task';
 import {NewTask} from '../new-task/new-task';
+import {INewTaskModel} from '../new-task/models/inew-task-model';
 
 @Component({
   selector: 'app-tasks',
@@ -15,7 +16,7 @@ import {NewTask} from '../new-task/new-task';
 export class Tasks {
 
   @Input() name?: string;
-  @Input() userId?: string;
+  @Input() userId!: string;
 
   isAddNewTask = false
   tasks = [
@@ -56,6 +57,19 @@ export class Tasks {
   }
 
   onCancelAddTask() {
+    this.isAddNewTask = false;
+  }
+
+  addToTasks(event: INewTaskModel) {
+    this.tasks.unshift(
+      {
+        id: new Date().getTime().toString(),
+        userId: this.userId,
+        title: event.title,
+        summary: event.summary,
+        dueDate: event.date,
+      }
+    )
     this.isAddNewTask = false;
   }
 }
